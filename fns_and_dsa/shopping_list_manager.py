@@ -12,16 +12,14 @@ def main():
         choice = input("Enter your choice: ")
 
         if choice == '1':
-            # Add an item
             item = input("Enter the item to add: ").strip()
             if item:
                 shopping_list.append(item)
-                print(f"'{item}' has been added to the shopping list.")
+                print("'{}' has been added to the shopping list.".format(item))
             else:
                 print("No item entered. Please try again.")
         
         elif choice == '2':
-            # Remove an item
             if not shopping_list:
                 print("The shopping list is empty.")
                 continue
@@ -29,18 +27,17 @@ def main():
             item = input("Enter the item to remove: ").strip()
             if item in shopping_list:
                 shopping_list.remove(item)
-                print(f"'{item}' has been removed from the shopping list.")
+                print("'{}' has been removed from the shopping list.".format(item))
             else:
-                print(f"'{item}' was not found in the shopping list.")
+                print("'{}' was not found in the shopping list.".format(item))
         
         elif choice == '3':
-            # View the list
             if not shopping_list:
                 print("Your shopping list is empty.")
             else:
                 print("\nCurrent Shopping List:")
                 for i, item in enumerate(shopping_list, 1):
-                    print(f"{i}. {item}")
+                    print("{}. {}".format(i, item))
         
         elif choice == '4':
             print("Goodbye!")
